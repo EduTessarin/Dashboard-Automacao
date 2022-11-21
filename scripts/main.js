@@ -1,24 +1,25 @@
 
 // Replace paragrath h1
 const myHeading = document.querySelector('h1');
-myHeading.textContent = 'Empório do Ciclista.js';
+myHeading.textContent = 'Dashboard Automação';
 
-// Image switcher code
-let myImage = document.querySelector('img');
-myImage.onclick = function() {
-  let mySrc = myImage.getAttribute('src');
-  if(mySrc === 'C:/Users/reril/Git/projeto-html-css/imagens/logo.gif') {
-    myImage.setAttribute ('src','C:/Users/reril/Git/projeto-html-css/imagens/logo2.gif');
-  } else {
-    myImage.setAttribute ('src','C:/Users/reril/Git/projeto-html-css/imagens/logo.gif');
-  }
-}
+const ctx = document.getElementById('myChart');
 
-// Pop-up early
-let minhaVariavel = document.querySelector ('h1');
-alert('hello!');
-
-// Pop-up touch
-document.querySelector('a').onclick = function() {
-    alert('Ouch! Stop poking me!');
-}
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
